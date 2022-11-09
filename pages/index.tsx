@@ -36,7 +36,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content="https://test-og-phi.vercel.app/api/og?title=my post title"
+          content={`https://test-og-phi.vercel.app/api/og?title=${title}`}
         />
       </Head>
 
