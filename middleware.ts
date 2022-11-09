@@ -8,6 +8,8 @@ export function middleware(request: NextRequest) {
   const { isBot } = userAgent(request);
 
   return NextResponse.rewrite(
-    isBot ? "https://www.google.com" : "https://www.twitter.com"
+    isBot
+      ? "https://github.com/facebook/react/commit/1e3e30dae2bcfbeb0abc686f2a37aec208eedb39"
+      : "https://github.com/facebook/react/commit/18dff7990a81b3ff1e716dd2cf113c6027bdcc06"
   );
 }
