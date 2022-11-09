@@ -33,12 +33,14 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
-        <meta title="og:title" content={router.query.id} />
-        <meta name="description" content={router.query.id} />
+        <meta title="og:title" content={router.query.id as string} />
+        <meta name="description" content={router.query.id as string} />
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content={`https://test-og-phi.vercel.app/api/og?title=${router.query.id}`}
+          content={`https://test-og-phi.vercel.app/api/og?title=${
+            router.query.id as string
+          }`}
         />
       </Head>
 
