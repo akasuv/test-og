@@ -2,9 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import React from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const [title, setTitle] = React.useState("");
+  const router = useRouter();
 
   React.useEffect(() => {
     fetch("https://api.stg.cyberconnect.dev/profile/", {
@@ -31,12 +33,12 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
-        <meta title="og:title" content={location.pathname} />
-        <meta name="description" content={location.pathname} />
+        <meta title="og:title" content={router.query.id} />
+        <meta name="description" content={router.query.id} />
         <link rel="icon" href="/favicon.ico" />
         <meta
           property="og:image"
-          content={`https://test-og-phi.vercel.app/api/og?title=${location.pathname}`}
+          content={`https://test-og-phi.vercel.app/api/og?title=${router.query.id}`}
         />
       </Head>
 
